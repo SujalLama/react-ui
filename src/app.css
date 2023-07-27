@@ -87,3 +87,43 @@ img {
 .modal-wrapper .modal-close:focus {
     outline: 1px solid red;
 }
+
+.dropdown {
+    position: relative;
+    width: 200px;
+}
+
+.dropdown-toggle {
+    background-color: green;
+    color: #fff;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    opacity: 0;
+    display: none;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+
+.dropdown-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+    animation: dropdownAnimation 0.1s ease-in-out;
+}
+
+@keyframes dropdownAnimation {
+    0% {opacity: 0; transform: translateY(10px); display: none;}
+    50% {opacity: 0.2; transform: translateY(10px); display: block;}
+    100% {opacity: 1; transform: translateY(0); display: block;}
+}

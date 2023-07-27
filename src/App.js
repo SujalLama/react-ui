@@ -6,6 +6,7 @@ import {FaCircleDot} from "react-icons/fa6";
 import Modal from "./components/Modal";
 import { useState } from "react";
 import useToggle from "./hooks/useToggle";
+import Dropdown from "./components/Dropdown";
 
 function App() {
   const {toggle , openHandler, closeHandler} = useToggle();
@@ -54,7 +55,7 @@ function App() {
       </Carousel.Item>
     </Carousel> */}
 
-    <h3>Modal</h3>
+    {/* <h3>Modal</h3>
     <button onClick={openHandler}>Show Modal</button>
     <Modal show={toggle} onClose={closeHandler} className="modal-wrapper">
       <div className="modal-content">
@@ -68,7 +69,21 @@ function App() {
           <Modal.Button className="modal-close">X</Modal.Button>
         </div>
       </div>
-    </Modal>
+    </Modal> */}
+
+    <h3>Dropdown</h3>
+    <Dropdown className="dropdown">
+      <Dropdown.Toggle className="dropdown-toggle">
+        Open dropdown
+      </Dropdown.Toggle>
+      <Dropdown.Menu className="dropdown-menu">
+        <ul>
+          <li>Home</li>
+          <li>Contact</li>
+          <li>About</li>
+        </ul>
+      </Dropdown.Menu>
+    </Dropdown>
     </>
   );
 }

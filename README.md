@@ -1,5 +1,20 @@
 # React UI library
 
+This is a react component library which only covers the most essential components along with some custom hooks. There are only few stylings to the components. The idea is to only provide functionality and only bare minimum style, so that you can make the component as per your design.
+
+**List of components:**
+
+1. [Accordion](/#accordion)
+2. [Carousel](/#carousel)
+3. [Dropdown](/#dropdown)
+4. [Modal](/#modal)
+
+**List of Hooks:**
+
+1. [useToggle](/#usetoggle)
+
+---
+
 ---
 
 ## Components
@@ -145,6 +160,42 @@ Following are the components in Modal:
       </div>
     </Modal>
 ```
+
+---
+
+### Dropdown
+
+Following are the components in Dropdown:
+
+- Dropdown
+  - Main wrapper of Dropdown
+  - Props:
+    - className -> to add custom styles
+- Dropdown.Toggle
+  - Wrapper to create button that closes the dropdown
+  - Props:
+    - className -> to add custom styles
+- Dropdown.Menu
+  - Wrapper for the menu box
+  - Props:
+    - className -> to add custom styles
+
+**Example**
+
+```js
+<Dropdown className="dropdown">
+  <Dropdown.Toggle className="dropdown-toggle">Open dropdown</Dropdown.Toggle>
+  <Dropdown.Menu className="dropdown-menu">
+    <ul>
+      <li>Home</li>
+      <li>Contact</li>
+      <li>About</li>
+    </ul>
+  </Dropdown.Menu>
+</Dropdown>
+```
+
+---
 
 ---
 

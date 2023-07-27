@@ -46,7 +46,7 @@ export default function Carousel({
 
             return () => clearInterval(timer);
         }
-    }, [interval])
+    }, [interval, maxScroll])
 
 
     const slideStyle = {

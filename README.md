@@ -27,7 +27,7 @@ Following are the components in accordion:
   - Wrapper to create body
   - accepts className props for styling purpose
 
-**use case:**
+**Example**
 
 ```js
 <Accordion className="accordion" defaultKey="">
@@ -93,7 +93,7 @@ Following are the components in Carousel:
   - Props:
     - className -> to add custom styles; defaults: carousel-item
 
-**use case:**
+**Example**
 
 ```js
 <Carousel className="carousel-wrapper" indicator={<FaCircleDot />}>
@@ -111,3 +111,58 @@ Following are the components in Carousel:
 ```
 
 ---
+
+### Modal
+
+Following are the components in Modal:
+
+- Modal
+  - Main wrapper of Modal
+  - Props:
+    - show -> accepts boolean which shows the state of modal
+    - onClose -> accepts function that is used to close modal; the function should change the state that is passed in show prop to false
+    - className -> to add custom styles; defaults: overlay -> that only adds the black overlay
+- Carousel.Button
+  - Wrapper to create button that closes the modal
+  - Props:
+    - className -> to add custom styles; defaults: btn -> which strips down all the default styling of button
+
+**Example**
+
+```js
+    <button onClick={openHandler}>Show Modal</button>
+    <Modal show={toggle} onClose={closeHandler} className="modal-wrapper">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h2>
+            This is header
+          </h2>
+          <Modal.Button className="modal-close">X</Modal.Button>
+        </div>
+        <div className="modal-button">
+          <Modal.Button className="modal-close">X</Modal.Button>
+        </div>
+      </div>
+    </Modal>
+```
+
+---
+
+## Custom Hooks
+
+---
+
+### useToggle
+
+This hook provides four values to be used. You can pass the intial value as parameter which is either true or false in useToggle
+
+- toggle -> the state which could be true or false
+- toggleHandler -> function that changes the state of toggle to true or false based on previous toggle value
+- openHandler -> functon that changes the state of toggle to true
+- closeHandler -> functon that changes the state of toggle to false
+
+**Example**
+
+```js
+const { toggle, toggleHandler, openHandler, closeHandler } = useToggle(false);
+```

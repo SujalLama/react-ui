@@ -3,8 +3,14 @@ import Accordion from "./components/Accordion";
 import {MdArrowDropDownCircle} from "react-icons/md";
 import Carousel from "./components/Carousel";
 import {FaCircleDot} from "react-icons/fa6";
+import Modal from "./components/Modal";
+import { useState } from "react";
+import useToggle from "./hooks/useToggle";
 
 function App() {
+  const {toggle , openHandler, closeHandler} = useToggle();
+
+
   return (
     <>
     <h1>React UI Library</h1>
@@ -37,7 +43,7 @@ function App() {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion> */}
-    <h3>Carousel</h3>
+    {/* <h3>Carousel</h3>
     <Carousel className='carousel-wrapper' indicator={<FaCircleDot />}>
       <Carousel.Item>
         <div className="carousel-item">
@@ -46,7 +52,23 @@ function App() {
         <p>Lorem</p>
         </div>
       </Carousel.Item>
-    </Carousel>
+    </Carousel> */}
+
+    <h3>Modal</h3>
+    <button onClick={openHandler}>Show Modal</button>
+    <Modal show={toggle} onClose={closeHandler} className="modal-wrapper">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h2>
+            This is header
+          </h2>
+          <Modal.Button className="modal-close">X</Modal.Button>
+        </div>
+        <div className="modal-button">
+          <Modal.Button className="modal-close">X</Modal.Button>
+        </div>
+      </div>
+    </Modal>
     </>
   );
 }

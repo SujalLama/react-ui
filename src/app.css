@@ -60,3 +60,30 @@ img {
 .carousel-item:last-of-type {
     padding-right: 0;
 }
+
+.modal-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 80%;
+    background-color: #fff;
+    padding: 2rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+
+.modal-wrapper .modal-close {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    background: royalblue;
+    color: #fff;
+}
+
+.modal-wrapper .modal-close:focus {
+    outline: 1px solid red;
+}

@@ -40,3 +40,23 @@
 .accord-body {
     background-color: aquamarine;
 }
+
+img {
+    max-width: 100%;
+}
+
+.carousel-wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    /* background-color: red; */
+    box-sizing: border-box;
+    /* margin: 2rem; */
+    padding-right: 2rem;
+}
+
+.carousel-item:last-of-type {
+    padding-right: 0;
+}

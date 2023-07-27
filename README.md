@@ -8,6 +8,7 @@ This is a react component library which only covers the most essential component
 2. [Carousel](/#carousel)
 3. [Dropdown](/#dropdown)
 4. [Modal](/#modal)
+5. [Tabs](/#tabs)
 
 **List of Hooks:**
 
@@ -193,6 +194,53 @@ Following are the components in Dropdown:
     </ul>
   </Dropdown.Menu>
 </Dropdown>
+```
+
+---
+
+### Tabs
+
+Following are the components in Tabs:
+
+- Tabs
+  - Main wrapper of Tabs
+  - Props:
+    - defaultkey: to show the default content
+- Tabs.Header
+  - Wrapper to create list of buttons that switch the content
+  - Props:
+    - className -> to add custom styles; default classname -> tab-header
+- Tabs.Head
+  - Wrapper to show individual button
+  - Props:
+    - className -> to add custom styles; default classname -> tab-head; active classname -> tab-active
+- Tabs.Tab
+  - Wrapper to show content
+  - Props:
+    - className -> to add custom styles; default classname -> tab-item
+
+```js
+<Tabs defaultKey="profile">
+  <Tabs.Header>
+    {[
+      { eventKey: "profile", title: "Profile" },
+      { eventKey: "contact", title: "Contact" },
+      { eventKey: "service", title: "Service" },
+      { eventKey: "about", title: "About" },
+    ].map((item) => {
+      return (
+        <Tabs.Head key={item.eventKey} eventKey={item.eventKey}>
+          {item.title}
+        </Tabs.Head>
+      );
+    })}
+  </Tabs.Header>
+
+  <Tabs.Tab eventKey="profile">Profile</Tabs.Tab>
+  <Tabs.Tab eventKey="contact">contact</Tabs.Tab>
+  <Tabs.Tab eventKey="service">service</Tabs.Tab>
+  <Tabs.Tab eventKey="about">about</Tabs.Tab>
+</Tabs>
 ```
 
 ---

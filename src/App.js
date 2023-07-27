@@ -7,6 +7,7 @@ import Modal from "./components/Modal";
 import { useState } from "react";
 import useToggle from "./hooks/useToggle";
 import Dropdown from "./components/Dropdown";
+import Tabs from "./components/Tabs";
 
 function App() {
   const {toggle , openHandler, closeHandler} = useToggle();
@@ -71,7 +72,7 @@ function App() {
       </div>
     </Modal> */}
 
-    <h3>Dropdown</h3>
+    {/* <h3>Dropdown</h3>
     <Dropdown className="dropdown">
       <Dropdown.Toggle className="dropdown-toggle">
         Open dropdown
@@ -83,7 +84,39 @@ function App() {
           <li>About</li>
         </ul>
       </Dropdown.Menu>
-    </Dropdown>
+    </Dropdown> */}
+
+    <h3>Tabs</h3>
+    <Tabs defaultKey="profile">
+        <Tabs.Header>
+          {
+            [
+              {eventKey: "profile", title:"Profile"},
+              {eventKey: "contact", title:"Contact"},
+              {eventKey: "service", title:"Service"},
+              {eventKey: "about", title:"About"},
+            ].map(item => {
+              return (
+              <Tabs.Head key={item.eventKey} eventKey={item.eventKey}>
+                {item.title}
+              </Tabs.Head>)
+            })
+          }
+        </Tabs.Header>
+
+        <Tabs.Tab eventKey="profile">
+          Profile
+        </Tabs.Tab>
+        <Tabs.Tab eventKey="contact">
+          contact
+        </Tabs.Tab>
+        <Tabs.Tab eventKey="service">
+          service
+        </Tabs.Tab>
+        <Tabs.Tab eventKey="about">
+          about
+        </Tabs.Tab>
+    </Tabs>
     </>
   );
 }

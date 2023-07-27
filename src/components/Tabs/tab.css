@@ -1,0 +1,21 @@
+.tab-header {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.tab-head {
+    padding: 1em 1.5em;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.tab-active {
+    background-color: #a8a2a2;
+}
+
+.tab-item {
+    padding: 1em 1.5em;
+    background-color: #a9a2a1;
+}
